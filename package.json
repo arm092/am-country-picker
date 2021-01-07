@@ -1,0 +1,28 @@
+{
+  "name": "am-country-picker",
+  "description": "A country picker plugin for jQuery.",
+  "version": "1.0.0",
+  "keywords": [
+    "country",
+    "country-picker",
+    "javascript",
+    "country picker",
+    "es6",
+    "es2015",
+    "jquery"
+  ],
+  "license": "MIT",
+  "author": "Arman Khachatryan",
+  "repository": "https://github.com/arm092/am-country-picker",
+  "bugs": "https://github.com/arm092/am-country-picker/issues",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "main": "dist/AmcPicker.js"
+}

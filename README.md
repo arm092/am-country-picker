@@ -1,6 +1,13 @@
-# **Country Picker plugin for Jquery**
+# **Country Picker plugin for Jquery and Vanilla Js**
 
-Usage:
+Usage for jQuery:
 ```
-    $('.custom-picker').amcPicker();
+$('.custom-picker').amcPicker();
+```
+
+Usage for Vanilla:
+```
+import AmcPicker from 'am-country-picker';
+
+const picker = new AmcPicker(document.querySlelector('.custom-picker'));
 ```

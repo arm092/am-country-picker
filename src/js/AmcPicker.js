@@ -11,6 +11,7 @@ if (typeof window.jQuery !== 'undefined') {
                 let $this = $(this),
                     picker = new AmcPicker($this[0], options);
             })
+            return this;
         }
     })(jQuery);
 }

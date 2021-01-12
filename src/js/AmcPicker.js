@@ -1,4 +1,4 @@
-import countries from "./data";
+// import countries from "./data";
 import defaults from "./defaults";
 import view from "./../views/without_flag.mustache";
 
@@ -59,21 +59,39 @@ export default class AmcPicker {
     }
 
     /**
+     * Async loading countries list
+     *
+     * @returns {Promise<void>}
+     */
+    async setCountries() {
+        if (typeof window.amCountries !== 'undefined') {
+            this.countries = window.amCountries;
+        } else {
+            const {default: countries} = await import("./data");
+            this.countries = countries;
+        }
+    }
+
+    /**
      * Render country picker
      * Append countries list to select
      */
     render() {
-        let localCountries = countries.hasOwnProperty(this.language) ? countries[this.language] : countries.en,
-            html = ``;
-        for (const countryCode in localCountries) {
-            if (localCountries.hasOwnProperty(countryCode)) {
-                if (!this.defaults.exclude.includes(countryCode))
-                    html += view({
-                        countryCode,
-                        countryName: localCountries[countryCode]
-                    })
-            }
-        }
-        this.picker.innerHTML = html;
+        const _this = this;
+        this.setCountries()
+            .then(() => {
+                let localCountries = _this.countries.hasOwnProperty(_this.language) ? _this.countries[_this.language] : _this.countries.en,
+                    html = ``;
+                for (const countryCode in localCountries) {
+                    if (localCountries.hasOwnProperty(countryCode)) {
+                        if (!_this.defaults.exclude.includes(countryCode))
+                            html += view({
+                                countryCode,
+                                countryName: localCountries[countryCode]
+                            })
+                    }
+                }
+                _this.picker.innerHTML = html;
+            });
     }
 }

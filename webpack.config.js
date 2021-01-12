@@ -6,7 +6,7 @@ module.exports = {
     cache: true,
     output: {
         path: path.join(__dirname, './dist/'),
-        chunkFilename: '[name].js',
+        // filename: '[name].js',
         filename: 'amcpicker.js',
         libraryTarget: "umd",
     },

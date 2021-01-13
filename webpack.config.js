@@ -15,21 +15,12 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                use: ['babel-loader'],
                 exclude: /node_modules/,
-                options: {
-                    presets: [
-                        ['env', {
-                            targets: {
-                                ie: 9
-                            }
-                        }]
-                    ]
-                }
             },
             {
                 test: /\.mustache|html$/,
-                loader: 'mustache-loader'
+                use: ['mustache-loader']
             }
         ]
     },

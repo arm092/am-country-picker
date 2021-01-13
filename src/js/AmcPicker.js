@@ -1,4 +1,11 @@
-// import countries from "./data";
+/*
+ * Am-Country-Picker v1.0.3
+ * https://github.com/arm092/am-country-picker
+ * Licensed under the MIT license
+ *
+ * Author: Arman Khachatryan
+ */
+
 import defaults from "./defaults";
 import view from "./../views/without_flag.mustache";
 
@@ -93,6 +100,7 @@ export default class AmcPicker {
                     }
                 }
                 _this.picker.innerHTML = html;
+                _this.picker.classList.add('amc-loaded');
             });
     }
 }

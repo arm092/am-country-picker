@@ -27,6 +27,11 @@ Default options are:
 
 ### Changelog
 
+**1.0.3:**
+* fixed small bugs
+* updated all dependencies
+* added 'amc-loaded' class on select after init
+
 **1.0.2:**
 * fixed jQuery method for returning jQuery object
 
